@@ -78,8 +78,7 @@ html, body, nz-layout {
 
 /* Header */
 nz-header {
-  background: rgb(235,131,23);
-  background: linear-gradient(90deg, rgba(235,131,23,1) 27%, rgba(243,198,35,1) 100%);
+  background: #df7f1b;
   color: #fff;
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -111,8 +110,7 @@ nz-content {
 
 /* Footer */
 nz-footer {
-  background: rgb(235,131,23);
-  background: linear-gradient(90deg, rgba(235,131,23,1) 27%, rgba(243,198,35,1) 100%);
+  background: #3c3c3c;
   color: #fff;
   text-align: center;
   padding: 24px;
