@@ -1,0 +1,43 @@
+
+    <nz-divider nzText="Tu Recibes" nzOrientation="left"></nz-divider>
+
+    <nz-input-group nzPrefix="USD" [nzSuffix]="suffixBaseAmountInfo">
+          <input
+          placeholder="Ingrese el monto que desea recibir"
+          nz-input
+          type="text"
+          [(ngModel)]="baseAmount"
+          (input)="updateFromBase()" />
+    </nz-input-group>
+     <ng-template #suffixBaseAmountInfo>
+      <nz-icon nz-tooltip nzTooltipTitle="Ingresa el monto que deseas recibir. La calculadora estimará cuánto debe pagar el comprador." nzType="info-circle" />
+    </ng-template>
+
+    <nz-divider nzText="Comisión" nzOrientation="left"></nz-divider>
+
+         <nz-input-group nzPrefix="USD" [nzSuffix]="suffixFeesInfo">
+      <input
+       nz-input
+      placeholder="Comision"
+      type="text"
+      [(ngModel)]="fees"
+      [disabled]="true"
+      />
+      </nz-input-group>
+           <ng-template #suffixFeesInfo>
+      <nz-icon nz-tooltip nzTooltipTitle="Payphone cobra una comisión del 5% sobre el valor pagado por el comprador, más el IVA actual del 15%. Esto equivale a un cargo total del 5.75% sobre el monto pagado." nzType="info-circle" />
+    </ng-template>
+
+    <nz-divider nzText="El Comprador Paga (Incluye Comisión)" nzOrientation="left"></nz-divider>
+      <nz-input-group nzPrefix="USD" [nzSuffix]="suffixTotalAmountInfo">
+      <input
+        nz-input
+        placeholder="Ingrese el monto que pagará el comprador"
+        type="text"
+        [(ngModel)]="totalAmount"
+        (input)="updateFromTotal()"
+       />
+       </nz-input-group>
+            <ng-template #suffixTotalAmountInfo>
+      <nz-icon nz-tooltip nzTooltipTitle="Ingresa el monto que pagará el comprador. Se calculará cuánto recibirás después de la comisión." nzType="info-circle" />
+    </ng-template>

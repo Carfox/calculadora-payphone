@@ -5,42 +5,18 @@ import { environment } from '../../../../environments/environment';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 @Component({
-  selector: 'app-calculator',
+  selector: 'feature-calculator',
   imports: [
     CommonModule,
     FormsModule,
     NzInputModule,
     NzIconModule,
     NzToolTipModule,
+    NzDividerModule,
   ],
-  template: `
-    <h3>Calculator</h3>
-    <div>
-      <label>Tu Recibes:</label>
-      <input
-      type="text"
-      [(ngModel)]="baseAmount"
-      (input)="updateFromBase()" />
-    </div>
-
-    <div>
-      <label>Fees:</label>
-      <input
-      type="text"
-      [(ngModel)]="fees" />
-    </div>
-
-    <div>
-      <label>El Comprado Paga:</label>
-      <input
-        type="text"
-        [(ngModel)]="totalAmount"
-        (input)="updateFromTotal()"
-      />
-    </div>
-  `,
+  templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -49,17 +25,20 @@ export class CalculatorComponent {
   public fees: number = 0;
   public totalAmount: number = 0;
   public iva = environment.values.iva;
-  public payphoneCharge = environment.values.payphoneCharge * this.iva + Number(environment.values.payphoneCharge);
+  public payphoneCharge =
+    environment.values.payphoneCharge * this.iva +
+    Number(environment.values.payphoneCharge);
 
   updateFromBase() {
-     this.totalAmount = Number(
-       (this.baseAmount / (1 - this.payphoneCharge)).toFixed(2)
-     );
-     this.fees = Number((this.totalAmount - this.baseAmount).toFixed(2));
+    this.totalAmount = Number(
+      (this.baseAmount / (1 - this.payphoneCharge)).toFixed(2)
+    );
+    this.fees = Number((this.totalAmount - this.baseAmount).toFixed(2));
   }
-
   updateFromTotal() {
-    this.fees = Number(Number(this.totalAmount * this.payphoneCharge).toFixed(2));
+    this.fees = Number(
+      Number(this.totalAmount * this.payphoneCharge).toFixed(2)
+    );
     this.baseAmount = Number(this.totalAmount) - Number(this.fees);
   }
 }

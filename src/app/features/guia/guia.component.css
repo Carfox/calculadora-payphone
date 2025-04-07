@@ -1,0 +1,23 @@
+.guia-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    i[nz-icon], nz-icon {
+      font-size: 20px;
+      color: #1890ff;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #595959;
+    }
+  }
+}
