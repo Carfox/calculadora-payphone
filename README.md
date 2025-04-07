@@ -1,4 +1,18 @@
-# CalculadoraPayphone
+# Calculadora Payphone
+
+La **Calculadora Payphone** es una herramienta práctica diseñada para facilitar el cálculo de comisiones aplicadas por el servicio de Payphone. Permite a los usuarios conocer de forma sencilla:
+
+- Cuánto debe pagar un comprador para que tú recibas una cantidad exacta.
+- Cuánto recibirás después de aplicar las comisiones, si defines el precio de venta.
+
+## ✨ Características
+
+- Cálculo inverso: determina el monto que el comprador debe pagar para que tú recibas una cantidad limpia.
+- Cálculo directo: muestra cuánto recibirás al ingresar el total a cobrar.
+- Manejo preciso de decimales.
+- Consideración de comisiones configurables como porcentaje.
+
+## 📦 Instalación
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
 
